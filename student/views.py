@@ -11,14 +11,12 @@ from rest_framework.permissions import IsAuthenticated
 class StudentCourseViewSet(ModelViewSet):
     serializer_class = StudentCourseserializer
     queryset = StudentCourse.objects.all()
-    permission_classes = [IsAuthenticated]
 
 
 
 class StudentLessonFeedbackViewSet(ModelViewSet):
     serializer_class = StudentLessonFeedbackserializer
     queryset = StudentLessonFeedback.objects.all()
-    permission_classes = [IsAuthenticated]
 
 
 
@@ -26,5 +24,4 @@ class StudentLessonFeedbackViewSet(ModelViewSet):
 class StudentLessonProgressViewSet(ModelViewSet):
     serializer_class = StudentLessonProgressserializer
     queryset = StudentLessonProgress.objects.all()
-    permission_classes = [IsAuthenticated]
     
