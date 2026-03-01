@@ -25,9 +25,11 @@ SECRET_KEY = 'django-insecure-q&r#!yb*07p_50$0dymgddj7&*ury=b=jm^0#hh%a-w$**qa!d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = [
+    "coursedeploy.pythonanywhere.com",
+    "127.0.0.1",
+    "localhost",
+]
 # Application definition
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
