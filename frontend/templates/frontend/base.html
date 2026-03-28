@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Course App{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-gKz1bg1RVoGJBU2b3IwrbdARjuL0eFozfOJ2B2da8Yztec2ey3BHvZT8OEQnum3g" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'frontend/site.css' %}">
+</head>
+<body class="course-landing">
+<header class="topbar py-2 text-center text-white">
+    <div class="container d-flex justify-content-center align-items-center gap-2 flex-wrap">
+        <span class="topbar-pill"><i class="bi bi-shield-check me-2"></i>Free trial / Secure access</span>
+        <span class="topbar-pill"><i class="bi bi-lightning-charge-fill me-2"></i>Courses updated weekly</span>
+    </div>
+</header>
+<nav class="navbar navbar-expand-lg sticky-top navbar-transparent py-3">
+    <div class="container align-items-center">
+        <a class="navbar-brand text-white fw-bold fs-4" href="{% url 'home' %}">CourseApp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <div class="mx-auto my-3 my-lg-0 w-100 w-lg-50">
+                <div class="search-input">
+                    <i class="bi bi-search"></i>
+                    <input type="text" class="form-control" placeholder="Search courses, skills, topics">
+                </div>
+            </div>
+            <ul class="navbar-nav ms-lg-auto align-items-center gap-3">
+                <li class="nav-item d-none d-lg-block"><a class="nav-link text-white" href="#features">Features</a></li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link text-white" href="#pricing">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link icon-link text-white" href="#"><i class="bi bi-person-circle"></i></a></li>
+                <li class="nav-item"><a class="nav-link icon-link text-white" href="#"><i class="bi bi-bell"></i></a></li>
+                <li class="nav-item"><a class="nav-link icon-link text-white" href="#"><i class="bi bi-cart-fill"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p class="mb-0">&copy; {% now "Y" %} Course App. Built with Django.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1l9o5bOlb3Z/Iq9GB0j8OzBc2e5tWLB8pl6/ZIqV+PBivHQKdJCefTLW3wQp8dN" crossorigin="anonymous"></script>
+</body>
+</html>

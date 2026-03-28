@@ -1,0 +1,382 @@
+/* Core page styles */
+:root {
+    color-scheme: dark;
+    --bg: #060A1E;
+    --surface: rgba(255,255,255,0.08);
+    --surface-strong: rgba(255,255,255,0.12);
+    --text: #F8FAFC;
+    --muted: rgba(248,250,252,0.78);
+    --border: rgba(255,255,255,0.15);
+    --shadow: 0 30px 90px rgba(5,10,30,0.18);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, rgba(113, 91, 255, 0.35), transparent 25%), linear-gradient(135deg, #4B3DD8 0%, #2172E5 35%, #0F172A 100%);
+    color: var(--text);
+}
+button, input {
+    font: inherit;
+}
+a {
+    text-decoration: none;
+}
+.main {
+    min-height: 100vh;
+}
+.topbar {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.topbar-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 0.92rem;
+}
+.navbar-transparent {
+    background: transparent !important;
+}
+.navbar-brand {
+    letter-spacing: -0.04em;
+}
+.navbar .navbar-toggler {
+    border-color: rgba(255,255,255,0.2);
+}
+.navbar .navbar-toggler-icon {
+    filter: invert(1);
+}
+.nav-link {
+    color: rgba(255,255,255,0.75) !important;
+    transition: color .3s ease;
+}
+.nav-link:hover {
+    color: #fff !important;
+}
+.icon-link {
+    font-size: 1.2rem;
+}
+.search-input {
+    width: 100%;
+    max-width: 520px;
+    position: relative;
+}
+.search-input i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.7);
+}
+.search-input input {
+    width: 100%;
+    padding: 15px 20px 15px 48px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    transition: background .3s ease, transform .3s ease, border-color .3s ease;
+}
+.search-input input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.35);
+    transform: translateY(-1px);
+}
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 8rem;
+}
+.hero-section::before,
+.hero-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.65;
+}
+.hero-section::before {
+    width: 420px;
+    height: 420px;
+    top: -90px;
+    left: -80px;
+    background: rgba(255,255,255,0.08);
+}
+.hero-section::after {
+    width: 360px;
+    height: 360px;
+    right: -90px;
+    bottom: -120px;
+    background: rgba(88, 132, 255, 0.18);
+}
+.hero-copy {
+    max-width: 560px;
+    z-index: 2;
+    position: relative;
+}
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    color: rgba(255,255,255,0.85);
+}
+.hero-title {
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    max-width: 650px;
+}
+.hero-title span {
+    color: #FACC15;
+}
+.hero-copy p {
+    color: rgba(255,255,255,0.78);
+    max-width: 540px;
+}
+.btn-primary {
+    background: linear-gradient(135deg, #FACC15 0%, #F59E0B 100%);
+    border: none;
+    box-shadow: 0 20px 40px rgba(250, 204, 21, 0.25);
+}
+.btn-outline-light {
+    border-color: rgba(255,255,255,0.24);
+    color: #fff;
+}
+.btn:hover {
+    transform: translateY(-2px);
+}
+.glass-card {
+    border-radius: 24px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 30px 90px rgba(0,0,0,0.16);
+    overflow: hidden;
+}
+.glass-card .card-pill {
+    display: inline-flex;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.14);
+    color: #FACC15;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+.price-group .price {
+    color: #fff;
+}
+.old-price {
+    color: rgba(255,255,255,0.6);
+    text-decoration: line-through;
+}
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.8rem 0;
+    border-color: rgba(255,255,255,0.08);
+}
+.info-card,
+.stats-card,
+.consumption-card,
+.tip-card,
+.comparison-card {
+    border-radius: 24px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px);
+}
+.info-card,
+.topbar-pill,
+.stats-card,
+.consumption-card,
+.tip-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.info-card:hover,
+.stats-card:hover,
+.consumption-card:hover,
+.tip-card:hover,
+.comparison-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,0.22);
+}
+.info-icon,
+.stats-icon,
+.icon-box {
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 1.4rem;
+}
+.info-icon {
+    margin: 0 auto 1rem;
+}
+.stats-icon {
+    margin: 0 auto 1rem;
+}
+.feature-item i,
+.tip-icon {
+    font-size: 1.4rem;
+}
+.chart-block {
+    border-radius: 1.5rem;
+    background: rgba(255,255,255,0.08);
+    padding: 1.25rem;
+}
+.chart-track {
+    background: rgba(255,255,255,0.12);
+}
+.chart-fill {
+    height: 12px;
+    border-radius: 999px;
+}
+.mini-chart {
+    background: rgba(255,255,255,0.1);
+    height: 12px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+.mini-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.5s ease;
+}
+.electricity-fill {
+    background: #FACC15;
+}
+.water-fill {
+    background: #38BDF8;
+}
+.gas-fill {
+    background: #FB7185;
+}
+.section-header .eyebrow {
+    color: rgba(255,255,255,0.75);
+}
+.stats-card {
+    background: rgba(255,255,255,0.05);
+    min-height: 320px;
+}
+.chart-hero {
+    position: relative;
+    min-height: 320px;
+    overflow: hidden;
+}
+.chart-line,
+.chart-line-alt {
+    position: absolute;
+    width: 80%;
+    height: 3px;
+    background: rgba(255,255,255,0.35);
+    border-radius: 999px;
+    left: 10%;
+}
+.chart-line {
+    top: 30%;
+}
+.chart-line-alt {
+    top: 55%;
+}
+.chart-dot {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 8px rgba(255,255,255,0.08);
+}
+.chart-dot-1 { top: 28%; left: 18%; }
+.chart-dot-2 { top: 50%; left: 45%; }
+.chart-dot-3 { top: 38%; left: 74%; }
+.chart-labels span {
+    color: rgba(255,255,255,0.68);
+}
+.consumption-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+.form-label {
+    color: rgba(255,255,255,0.82);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+.comparison-section {
+    padding: 6rem 0;
+}
+.comparison-card .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+}
+.comparison-list li {
+    margin-bottom: 1rem;
+    color: rgba(255,255,255,0.92);
+}
+.tip-card {
+    min-height: 220px;
+}
+.tip-icon {
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    margin-bottom: 1rem;
+}
+.btn-primary,
+.btn-outline-light {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover,
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+}
+@media (max-width: 991px) {
+    .search-input {
+        max-width: 100%;
+    }
+}
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 4rem 0 6rem;
+    }
+    .hero-section::before,
+    .hero-section::after {
+        display: none;
+    }
+    .hero-copy {
+        text-align: center;
+    }
+    .hero-copy .eyebrow {
+        justify-content: center;
+    }
+    .hero-section .row {
+        align-items: center;
+    }
+    .glass-card {
+        border-radius: 24px;
+    }
+}

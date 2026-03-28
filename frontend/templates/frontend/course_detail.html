@@ -1,0 +1,78 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}{{ course.title }} - Course App{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="course-detail-card card border-0 shadow-sm overflow-hidden">
+            {% if course.image %}
+                <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
+            {% else %}
+                <div class="course-detail-hero"></div>
+            {% endif %}
+            <div class="card-body">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3 mb-3">
+                    <div>
+                        <p class="text-primary mb-2">{{ course.category.title }}</p>
+                        <h1 class="h3 mb-2">{{ course.title }}</h1>
+                        <p class="text-muted mb-0">Updated {{ course.updated_at|date:'M d, Y' }}</p>
+                    </div>
+                    <div class="text-end">
+                        <p class="h4 mb-1">${{ course.price }}</p>
+                        <span class="badge bg-primary bg-opacity-15 text-primary">{{ course.rate }}/5 rating</span>
+                    </div>
+                </div>
+                <p class="text-muted">{{ course.descriptions|linebreaksbr }}</p>
+                <div class="row g-3 mt-4">
+                    <div class="col-6">
+                        <div class="info-pill">Students <strong>{{ course.learned_students }}</strong></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="info-pill">Status <strong>{% if course.is_active %}Active{% else %}Offline{% endif %}</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4 border-0 shadow-sm">
+            <div class="card-body">
+                <h2 class="h5 mb-3">Course modules</h2>
+                {% if modules %}
+                    <div class="list-group list-group-flush">
+                        {% for module in modules %}
+                            <div class="list-group-item p-3 rounded-4 mb-2 shadow-sm">
+                                <h5 class="mb-1">{{ module.title }}</h5>
+                                <p class="mb-0 text-muted">{{ module.descriptions|truncatechars:140 }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-muted mb-0">No modules have been added to this course yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <aside class="col-lg-4">
+        <div class="card border-0 shadow-sm p-4">
+            <h5 class="mb-3">Course summary</h5>
+            <ul class="list-unstyled text-muted mb-0">
+                <li class="mb-2"><strong>Price:</strong> ${{ course.price }}</li>
+                <li class="mb-2"><strong>Discount price:</strong> ${{ course.discount_price }}</li>
+                <li class="mb-2"><strong>Created:</strong> {{ course.created_at|date:'M d, Y' }}</li>
+                <li class="mb-2"><strong>Updated:</strong> {{ course.updated_at|date:'M d, Y' }}</li>
+                <li class="mb-2"><strong>Category:</strong> {{ course.category.title }}</li>
+            </ul>
+            <a href="{% url 'course_list' %}" class="btn btn-primary w-100 mt-3">Back to courses</a>
+        </div>
+        <div class="card border-0 shadow-sm p-4 mt-4">
+            <h5 class="mb-3">More categories</h5>
+            <div class="list-group list-group-flush">
+                {% for category in categories %}
+                    <a href="{% url 'category_courses' category.pk %}" class="list-group-item list-group-item-action rounded-3">{{ category.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </aside>
+</div>
+{% endblock %}

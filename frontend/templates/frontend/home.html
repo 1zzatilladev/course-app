@@ -1,0 +1,144 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Course App – Premium Education Landing{% endblock %}
+
+{% block content %}
+<section class="hero-section position-relative overflow-hidden">
+    <div class="hero-background-blur"></div>
+    <div class="container position-relative py-5">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+                <div class="hero-copy text-white">
+                    <p class="eyebrow">Premium education for ambitious learners</p>
+                    <h1 class="display-5 fw-bold hero-title">Eng yaxshi kurslar <span>eng yaxshi</span> narxlarda</h1>
+                    <p class="lead text-white-75 mb-4">Learn from expert instructors with a modern course platform, built for students who want a premium learning experience.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="#" class="btn btn-primary btn-lg">Start Learning</a>
+                        <a href="#" class="btn btn-outline-light btn-lg">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="glass-card p-4 p-xl-5 position-relative overflow-hidden shadow-lg">
+                    <div class="card-pill mb-3">SALE -50%</div>
+                    <h3 class="mb-3">Special Offer</h3>
+                    <div class="price-group d-flex align-items-end gap-3 mb-3">
+                        <span class="price display-6 fw-bold">$120</span>
+                        <span class="old-price">$240</span>
+                    </div>
+                    <p class="text-muted mb-4">Access the full course library, premium resources, and instructor Q&amp;A with one simple payment.</p>
+                    <div class="list-group list-group-flush mb-4">
+                        <div class="list-group-item feature-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Lifetime access</div>
+                        <div class="list-group-item feature-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Certificate included</div>
+                        <div class="list-group-item feature-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Practical projects</div>
+                    </div>
+                    <a href="#" class="btn btn-outline-light btn-lg w-100">Get this deal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pb-5">
+    <div class="row g-4 justify-content-center text-center">
+        <div class="col-md-4">
+            <div class="info-card glass-card p-4 shadow-sm">
+                <div class="info-icon bg-electricity text-white mb-3"><i class="bi bi-lightning-charge-fill"></i></div>
+                <h5>250+ courses</h5>
+                <p class="text-muted mb-0">A growing library of premium classes.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-card glass-card p-4 shadow-sm">
+                <div class="info-icon bg-water text-white mb-3"><i class="bi bi-droplet-fill"></i></div>
+                <h5>120K students</h5>
+                <p class="text-muted mb-0">Students learning smarter every day.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-card glass-card p-4 shadow-sm">
+                <div class="info-icon bg-gas text-white mb-3"><i class="bi bi-fuel-pump-fill"></i></div>
+                <h5>4.9 rating</h5>
+                <p class="text-muted mb-0">Top-rated education experience worldwide.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-5">
+    <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+            <div class="section-header mb-4">
+                <p class="eyebrow mb-2">Learning insights</p>
+                <h2 class="fw-bold">Daily &amp; weekly study performance</h2>
+                <p class="text-muted">Track your learning progress and watch your results improve with every session.</p>
+            </div>
+            <div class="consumption-grid">
+                <div class="glass-card p-4 shadow-sm">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="form-label">Daily study</span>
+                        <span class="badge bg-electricity bg-opacity-15 text-electricity">Courses</span>
+                    </div>
+                    <h3 class="mb-1">3 hrs</h3>
+                    <p class="text-muted mb-3">Average learning time per day.</p>
+                    <div class="mini-chart mb-2">
+                        <div class="mini-fill electricity-fill" style="width: 78%"></div>
+                    </div>
+                    <p class="small text-muted mb-0">Up 24% more productive this month.</p>
+                </div>
+                <div class="glass-card p-4 shadow-sm">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="form-label">Weekly growth</span>
+                        <span class="badge bg-water bg-opacity-15 text-water">Engagement</span>
+                    </div>
+                    <h3 class="mb-1">15 hrs</h3>
+                    <p class="text-muted mb-3">Learning time throughout the week.</p>
+                    <div class="mini-chart mb-2">
+                        <div class="mini-fill water-fill" style="width: 64%"></div>
+                    </div>
+                    <p class="small text-muted mb-0">Improved focus and retention.</p>
+                </div>
+                <div class="glass-card p-4 shadow-sm">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="form-label">Before vs After</span>
+                        <span class="badge bg-gas bg-opacity-15 text-gas">Skill level</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="fw-semibold">Before</span>
+                        <span class="text-muted">Intermediate</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="fw-semibold">After</span>
+                        <span class="text-muted">Advanced</span>
+                    </div>
+                    <div class="mini-chart mb-2">
+                        <div class="mini-fill gas-fill" style="width: 42%"></div>
+                    </div>
+                    <p class="small text-muted mb-0">Skills boosted by guided practice.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="stats-card p-4 p-lg-5 shadow-lg">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <p class="eyebrow mb-1 text-white">Analytics report</p>
+                        <h3 class="text-white fw-bold mb-0">Consumption trends</h3>
+                    </div>
+                    <div class="badge bg-white text-dark">Live</div>
+                </div>
+                <div class="chart-hero position-relative bg-white bg-opacity-10 rounded-4 p-4">
+                    <div class="chart-dot chart-dot-1"></div>
+                    <div class="chart-dot chart-dot-2"></div>
+                    <div class="chart-dot chart-dot-3"></div>
+                    <div class="chart-line"></div>
+                    <div class="chart-line chart-line-alt"></div>
+                    <div class="chart-labels d-flex justify-content-between text-white mt-4">
+                        <span>Mon</span><span>Wed</span><span>Fri</span><span>Sun</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

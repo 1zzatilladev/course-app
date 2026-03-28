@@ -11,9 +11,12 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import importlib.util
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+USE_WHITENOISE = importlib.util.find_spec('whitenoise') is not None
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,10 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-q&r#!yb*07p_50$0dymgddj7&*ury=b=jm^0#hh%a-w$**qa!d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "coursedeploy.pythonanywhere.com",
+    "enmfioewrnfklds.pythonanywhere.com",
+    ".pythonanywhere.com",
     "127.0.0.1",
     "localhost",
 ]
@@ -47,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_filters',
     'rest_framework',
+    'frontend',
 
     'student',
     'payment',
@@ -58,6 +64,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    *(['whitenoise.middleware.WhiteNoiseMiddleware'] if USE_WHITENOISE else []),
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -131,5 +138,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+if DEBUG:
+    STATICFILES_DIRS = [
+        BASE_DIR / 'frontend' / 'static',
+    ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' if USE_WHITENOISE else 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 AUTH_USER_MODEL = 'users.User'
